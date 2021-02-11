@@ -7,9 +7,9 @@
 @font-face {
     /* not prioritised!!! */
     font-family: "SevenSeg";
-    src: url("/DSEG7-Classic/DSEG7Classic-Regular.woff2") format("woff2"),
-        url("/DSEG7-Classic/DSEG7Classic-Regular.woff") format("woff"),
-        url("/DSEG7-Classic/DSEG7Classic-Regular.ttf") format("truetype");
+    src: url("/sevenseg/sevensegRegular.woff") format("woff2"),
+        url("/sevenseg/sevensegRegular.woff") format("woff"),
+        url("/sevenseg/sevensegRegular.ttf") format("truetype");
 }
 
 * {
