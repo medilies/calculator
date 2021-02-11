@@ -1,3 +1,11 @@
+@font-face {
+    /* not prioritised!!! */
+    font-family: "SevenSeg";
+    src: url("/DSEG7-Classic/DSEG7Classic-Regular.woff2") format("woff2"),
+        url("/DSEG7-Classic/DSEG7Classic-Regular.woff") format("woff"),
+        url("/DSEG7-Classic/DSEG7Classic-Regular.ttf") format("truetype");
+}
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
@@ -7,6 +15,10 @@
 
 main {
     padding-top: 2rem;
+}
+
+.calc-output {
+    font-family: "SevenSeg" !important; /* not prioritised!!! */
 }
 
 #js-calc {
