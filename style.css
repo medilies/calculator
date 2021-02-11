@@ -5,11 +5,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 @font-face {
-    /* not prioritised!!! */
+    /* PREPENDING FONT PATH WITH REPO NAME BECAUSE OF THE DEPLOYMENT URL */
     font-family: "SevenSeg";
-    src: url("/sevenseg/sevensegRegular.woff") format("woff2"),
-        url("/sevenseg/sevensegRegular.woff") format("woff"),
-        url("/sevenseg/sevensegRegular.ttf") format("truetype");
+    src: url("/calculator/sevenseg/sevensegBold.woff") format("woff2"),
+        url("/calculator/sevenseg/sevensegBold.woff") format("woff"),
+        url("/calculator/sevenseg/sevensegBold.ttf") format("truetype");
 }
 
 * {
@@ -21,11 +21,6 @@
 
 main {
     padding-top: 2rem;
-}
-
-#previous-output,
-#current-output {
-    font-family: "SevenSeg", cursive;
 }
 
 #js-calc {
@@ -43,7 +38,14 @@ main {
     grid-template-rows: minmax(3rem, auto) repeat(5, 2.5rem);
     gap: 0.2rem 0.2rem;
 }
+
+#previous-output,
+#current-output {
+    font-family: "SevenSeg", "Press Start 2P", cursive;
+}
+
 .calc-btn {
+    font-family: Orbitron;
     border: solid 1px #000;
     border-radius: 3px;
     text-align: center;
