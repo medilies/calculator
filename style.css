@@ -23,10 +23,16 @@ main {
     padding-top: 2rem;
 }
 
+h1 {
+    font-family: Faster One;
+    font-weight: 550;
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
 #js-calc {
     display: grid;
     align-content: center;
-    justify-content: center;
     grid-template-areas:
         " output output output output"
         " clear clear delete divide"
@@ -37,11 +43,17 @@ main {
     grid-template-columns: repeat(4, 3rem);
     grid-template-rows: minmax(3rem, auto) repeat(5, 2.5rem);
     gap: 0.2rem 0.2rem;
+    border: 1px solid #000;
+    margin: auto;
+    width: fit-content;
+    padding: 0.3rem;
+    border-radius: 9px;
 }
 
 #previous-output,
 #current-output {
     font-family: "SevenSeg", "Press Start 2P", cursive;
+    min-height: 2rem;
 }
 
 .calc-btn {

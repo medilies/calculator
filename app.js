@@ -21,8 +21,9 @@ class Calculator {
 
     appendNb(nb) {
         if (nb === "." && this.currentOperand.includes(".")) return;
-        // Typing a new oprand to override result
-        if (this.previousOperand !== "" && this.operation === "")
+        if (nb === "." && this.currentOperand === "") nb = "0.";
+        // Delete old output - User is typing a new oprand to override old result
+        else if (this.previousOperand !== "" && this.operation === "")
             this.previousOperand = "";
         this.currentOperand = this.currentOperand.toString() + nb.toString();
         this.updateOutput();
@@ -138,6 +139,22 @@ calc.addEventListener("click", (e) => {
     } else if (btn.hasAttribute("clear")) {
         calculator.clear();
     } else if (btn.hasAttribute("delete")) {
+        calculator.delete();
+    }
+});
+
+document.addEventListener("keydown", function (e) {
+    const key = e.key;
+
+    if (!isNaN(key) || key === ".") {
+        calculator.appendNb(key);
+    } else if (["+", "-", "*", "/"].includes(key)) {
+        calculator.operate(key);
+    } else if (key === "Enter") {
+        calculator.result();
+    } else if (key === "Delete") {
+        calculator.clear();
+    } else if (key === "Backspace") {
         calculator.delete();
     }
 });
