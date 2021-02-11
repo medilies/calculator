@@ -1,10 +1,18 @@
 class Calculator {
+    /**
+     * Set HTML elements that make the calculator display
+     * @param {HTMLDivElement} previousElement
+     * @param {HTMLDivElement} currentElement
+     */
     constructor(previousElement, currentElement) {
         this.previousElement = previousElement;
         this.currentElement = currentElement;
         this.init();
     }
 
+    /**
+     * Reset state
+     */
     init() {
         this.currentOperand = "";
         this.previousOperand = "";
@@ -13,12 +21,15 @@ class Calculator {
 
     appendNb(nb) {
         if (nb === "." && this.currentOperand.includes(".")) return;
+        // Typing a new oprand to override result
+        if (this.previousOperand !== "" && this.operation === "")
+            this.previousOperand = "";
         this.currentOperand = this.currentOperand.toString() + nb.toString();
         this.updateOutput();
     }
 
     operate(op) {
-        // User didn't input any number
+        // User didn't input any number (0 operations)
         if (
             this.operation === "" &&
             this.previousOperand === "" &&
@@ -26,21 +37,23 @@ class Calculator {
         ) {
             return;
         }
-        // User supplied fisrt operand and is about to supply the second one
+        // User is about to supply the second operand (1st operation)
         else if (
             this.operation === "" &&
             this.previousOperand === "" &&
             this.currentOperand !== ""
         ) {
-            this.operation = op;
             this.previousOperand = this.currentOperand;
             this.currentOperand = "";
-        } else if (
+        }
+        // User is on the 2nd operation or more
+        else if (
             this.operation !== "" &&
             this.previousOperand !== "" &&
             this.currentOperand !== ""
         ) {
             this.compute();
+            this.currentOperand = "";
         }
         this.operation = op;
         this.updateOutput();
@@ -53,24 +66,30 @@ class Calculator {
             this.currentOperand !== ""
         ) {
             this.compute();
-            this.operation = "";
             this.currentOperand = "";
+            this.operation = "";
+            this.updateOutput();
         }
-        this.updateOutput();
     }
 
+    /**
+     * Reset state and clears output
+     */
     clear() {
         this.init();
         this.updateOutput();
     }
 
+    /**
+     * Remove last digit from currentOperand
+     */
     delete() {
         this.currentOperand = this.currentOperand.slice(0, -1);
         this.updateOutput();
     }
 
     /**
-     * sets previousOperand
+     * Sets previousOperand
      */
     compute() {
         let curr = parseFloat(this.currentOperand);
@@ -92,6 +111,7 @@ class Calculator {
             default:
                 throw "unexpected operation";
         }
+        this.previousOperand = this.previousOperand.toString();
     }
 
     updateOutput() {
