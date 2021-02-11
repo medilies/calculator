@@ -141,6 +141,3 @@ calc.addEventListener("click", (e) => {
         calculator.delete();
     }
 });
-
-currentOutput.style.fontFamily = "SevenSeg";
-previousOutput.style.fontFamily = "SevenSeg";

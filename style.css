@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faster+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 @font-face {
     /* not prioritised!!! */
     font-family: "SevenSeg";
@@ -17,8 +23,9 @@ main {
     padding-top: 2rem;
 }
 
-.calc-output {
-    font-family: "SevenSeg" !important; /* not prioritised!!! */
+#previous-output,
+#current-output {
+    font-family: "SevenSeg", cursive;
 }
 
 #js-calc {
