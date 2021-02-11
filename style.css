@@ -54,6 +54,8 @@ h1 {
 #current-output {
     font-family: "SevenSeg", "Press Start 2P", cursive;
     min-height: 2rem;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .calc-btn {
@@ -121,10 +123,4 @@ h1 {
 }
 .delete {
     grid-area: delete;
-}
-.open-parentheses {
-    grid-area: open-par;
-}
-.close-parentheses {
-    grid-area: close-par;
 }

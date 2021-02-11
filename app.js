@@ -105,7 +105,7 @@ class Calculator {
             case "*":
                 this.previousOperand = prev * curr;
                 break;
-            case "/":
+            case "÷":
                 this.previousOperand = prev / curr;
                 break;
 
@@ -144,11 +144,12 @@ calc.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", function (e) {
-    const key = e.key;
+    let key = e.key;
 
     if (!isNaN(key) || key === ".") {
         calculator.appendNb(key);
     } else if (["+", "-", "*", "/"].includes(key)) {
+        if (key === "/") key = "÷";
         calculator.operate(key);
     } else if (key === "Enter") {
         calculator.result();

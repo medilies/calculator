@@ -2,7 +2,7 @@
 
 A minimum code vanilla js calculator.
 
--   (1) event listner + (1) class to handle the application
+-   (2) event listner for calucator buttons & keyboad inputs + (1) class to handle the application
 -   CSS grid to handle the layout
 -   HTML attributes to distinguish buttons effects
 
