@@ -20,7 +20,15 @@ class Calculator {
     }
 
     appendNb(nb) {
+        // prevent more then (1) dot in same currentOperand
         if (nb === "." && this.currentOperand.includes(".")) return;
+        // prevent more then (1) zero on the left of currentOperand
+        if (
+            nb === "0" &&
+            this.currentOperand.length >= 1 &&
+            "0".repeat(this.currentOperand.length) === this.currentOperand
+        )
+            return;
         if (nb === "." && this.currentOperand === "") nb = "0.";
         // Delete old output - User is typing a new oprand to override old result
         else if (this.previousOperand !== "" && this.operation === "")

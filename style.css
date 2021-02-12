@@ -40,8 +40,8 @@ h1 {
         "for five six  minus"
         "one two three plus"
         "zero dot equal equal";
-    grid-template-columns: repeat(4, 3rem);
-    grid-template-rows: minmax(3rem, auto) repeat(5, 2.5rem);
+    grid-template-columns: repeat(4, 75px);
+    grid-template-rows: minmax(3rem, auto) repeat(5, 70px);
     gap: 0.2rem 0.2rem;
     border: 1px solid #000;
     margin: auto;
@@ -50,12 +50,27 @@ h1 {
     border-radius: 9px;
 }
 
+.calc-output {
+    padding: 0.2rem;
+    border: #888 1px dotted;
+}
+
 #previous-output,
 #current-output {
     font-family: "SevenSeg", "Press Start 2P", cursive;
-    min-height: 2rem;
+    min-height: 50px;
+    text-align: right;
     word-wrap: break-word;
     word-break: break-all;
+}
+
+#previous-output {
+    color: #333;
+}
+
+#current-output {
+    font-size: 1.5rem;
+    color: #000;
 }
 
 .calc-btn {
@@ -117,10 +132,17 @@ h1 {
 }
 .equal {
     grid-area: equal;
+    background: cyan;
 }
 .clear {
     grid-area: clear;
+    background: orange;
 }
 .delete {
     grid-area: delete;
+    background: yellow;
+}
+
+[ops] {
+    background: #ccc;
 }
